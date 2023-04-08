@@ -1,4 +1,5 @@
 package Modele;
 
-public class Client {
+public class Client extends User {
+    //private toutes les reservation;
 }

@@ -1,4 +1,4 @@
 package Modele;
 
-public class Employé {
+public class Employé extends User {
 }
