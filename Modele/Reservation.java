@@ -8,4 +8,25 @@ public class Reservation {
     //private Date dateF;
     private float prixT;
     private int nbPersonne;
+
+    //Constructeur par défaut
+
+    public Reservation(){
+        IDreservation=0;
+        maChambre=null;
+        monClient=null;
+        prixT= 0.0F;
+        nbPersonne=0;
+
+    }
+
+    // Constructeur avec paramètres
+
+    public Reservation(int IDreservation,Chambre maChambre,Client monClient,float prixT,int nbPersonne){
+        this.IDreservation=IDreservation;
+        this.maChambre=maChambre;
+        this.monClient=monClient;
+        this.prixT=prixT;
+        this.nbPersonne=nbPersonne;
+    }
 }
