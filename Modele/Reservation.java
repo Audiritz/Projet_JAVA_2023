@@ -18,7 +18,7 @@ public class Reservation {
         prixT= 0.0F;
         nbPersonne=0;
 
-    }
+    } 
 
     // Constructeur avec paramètres
 
