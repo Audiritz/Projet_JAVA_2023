@@ -17,7 +17,7 @@ public class Hotel {
         tel=0;
         nbEtoile=0;
     }
-    
+
     public Hotel(int IDhotel, String ville, String adresse, int tel, int nbEtoile){
         this.IDhotel=IDhotel;
         this.ville=ville;
@@ -26,4 +26,6 @@ public class Hotel {
         this.nbEtoile=nbEtoile;
     }
 }
+
+
 
