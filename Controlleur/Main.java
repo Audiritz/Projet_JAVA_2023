@@ -7,6 +7,6 @@ public class Main {
 
         //creation/emmène à la page de connexion :
         Connexion connex = new Connexion();
-        connex.setVisible(true);
+
     }
 }

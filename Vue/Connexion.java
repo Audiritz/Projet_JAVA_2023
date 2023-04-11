@@ -1,4 +1,117 @@
 package Vue;
+
+import Modele.*;
+//import javafx.scene.layout.Background;
+
+import javax.swing.*;
+import javax.swing.text.JTextComponent;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Connexion extends JFrame  {
+
+    //JButton clic = new JButton("clic");
+    public static JTextField fieldUsername;
+    public static JPasswordField fieldPassword;
+    Bdd db = new Bdd();
+    public int id=106;
+
+
+
+
+    public Connexion() { // constructeur
+        setSize(400, 300); // donne une taille en hauteur et largeur à la fenêtre
+        setTitle("Ma premiere fenetre"); // donne un titre à la fenêtre
+        setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+
+        //ImageIcon fond= new ImageIcon("images/")
+        JPanel container = new JPanel( new GridBagLayout());
+        add(container);
+        //Background fond= new Background();
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.insets = new Insets(10, 10, 10, 10);
+
+        JLabel client = new JLabel("Nom d'utilisateur");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        container.add(client, gbc);
+
+        fieldUsername = new JTextField(20);
+        setPreferredSize(new Dimension(150,10));
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        container.add(fieldUsername, gbc);
+
+
+        JLabel passwordLabel = new JLabel("Mot de passe:");
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        container.add(passwordLabel, gbc);
+
+        fieldPassword = new JPasswordField(20);
+        //setPreferredSize(new Dimension(200,10));
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        container.add(fieldPassword, gbc);
+
+        JButton loginButton = new JButton("S'inscrire'");
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        //gbc.anchor = GridBagConstraints.CENTER;
+        container.add(loginButton, gbc);
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nom= getFieldUsername().getText();
+                String mdp= Arrays.toString(getFieldPassword().getPassword());
+                db.loadDatabase();
+                db.ajouterUtilisateur(id, nom, mdp);
+                id++;
+
+            }
+        });
+
+        JLabel visiteur = new JLabel("Vous n'avez pas de compte?");
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        container.add(visiteur, gbc);
+
+        JButton visiteurPass = new JButton("Cliquez ici");
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        container.add(visiteurPass, gbc);
+
+        add(container);
+    }
+
+    public static JTextField getFieldUsername() {
+        return fieldUsername;
+    }
+    public static JPasswordField getFieldPassword() {
+        return fieldPassword;
+    }
+
+    public Connexion(int dimx, int dimy, String Titre) {
+        setSize(dimx, dimy);
+        setTitle(Titre);
+        setVisible(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+    }
+}
+
+/* package Vue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,7 +127,7 @@ public class Connexion extends JFrame {
     private JLabel msgBienvenue;
 
     //Constructeurs générés par IntelliJ
-    /*
+
     public Connexion() throws HeadlessException {
     }
     public Connexion(GraphicsConfiguration gc) {
@@ -25,7 +138,7 @@ public class Connexion extends JFrame {
     }
     public Connexion(String title, GraphicsConfiguration gc) {
         super(title, gc);
-    }*/
+    } //
 
     // Creer un evenement listener pour le bouton de connexion
     ActionListener loginBtnListener = new ActionListener() {
@@ -54,11 +167,11 @@ public class Connexion extends JFrame {
     //booleen pour la logique de validation
     private boolean connexAutorisee(String username, char[] password) {
         {
-            /*// ATTENTION IL FAUDRA MODIFIER EN FONCTION DES BD
+            // ATTENTION IL FAUDRA MODIFIER EN FONCTION DES BD
             if (usernameFld == usernameFld && passwordFld == passwordFld) {
                 return true;
             }
-            else return false;*/
+            else return false;
             return false;
         }
     }
@@ -122,3 +235,5 @@ public class Connexion extends JFrame {
     }
 
 }
+*/
+
