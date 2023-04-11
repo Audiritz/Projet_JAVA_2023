@@ -19,7 +19,7 @@ import java.sql.*;
             }
 
             try {
-                connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdd_booking", "root", "");
+                connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking_ece", "root", "");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
