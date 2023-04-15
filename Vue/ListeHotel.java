@@ -1,5 +1,5 @@
 package Vue;
-
+/*
 import Modele.Bdd;
 
 public class ListeHotel extends javax.swing.JInternalFrame {
@@ -18,3 +18,4 @@ public class ListeHotel extends javax.swing.JInternalFrame {
         }
     }
 }
+*/
